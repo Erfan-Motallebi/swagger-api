@@ -1,0 +1,85 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0.0"
+  contact:
+    name: Erfan Motallebi
+    email: Erfan.Motallebi@gmail.com
+servers:
+  - url: http://localhost:5000
+
+paths:
+  /api/users:
+    get:
+      tags:
+        - "Users"
+      responses:
+        200:
+          description: successfully done
+    post:
+      tags:
+        - "Add a new User"
+      description: >
+        you can add a new user just by an object
+        this is how we do somtimes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: number
+                name:
+                  type: string
+                age:
+                  type: integer
+              example:
+                id: 1
+                name: Eric
+                age: 87
+      responses:
+        200:
+          description: Successfully added a new user
+          content:
+            application/json:
+              schema:
+                type: object
+                title: Json File
+              example:
+                id: 1
+                name: Peter
+                age: 52
+
+  /api/user/{id}:
+    get:
+      tags:
+        - "Specific User"
+      description: find a specific user from user ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: Successfully done
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  age:
+                    type: number
+                example:
+                  id: 1
+                  name: Johnson
+                  age: 58
+        400:
+          description: Failed
