@@ -16,7 +16,7 @@ paths:
       responses:
         200:
           description: successfully done
-    post:
+    put:
       tags:
         - "Add a new User"
       description: >
