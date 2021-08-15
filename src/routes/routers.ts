@@ -36,7 +36,7 @@ Router.get("/user/:userId", (req: Request, res: Response) => {
   }
 });
 
-Router.put"/users", (req: Request, res: Response) => {
+Router.post("/users", (req: Request, res: Response) => {
   const newCommer = req.body;
   const newUsers = users.concat(newCommer);
   if (newUsers) {

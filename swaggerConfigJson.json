@@ -45,7 +45,7 @@
           }
         }
       },
-      "put": {
+      "post": {
         "tags": ["User"],
         "description": "Get a specific user through user ID",
         "operationId": "getUser",
